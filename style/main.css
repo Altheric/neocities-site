@@ -1,0 +1,10 @@
+#navbar{
+    font-size: 32px;
+}
+#navbar li {
+    display: inline-block;
+}
+h1{
+    font-weight: bold;
+    font-size: 64px;
+}
