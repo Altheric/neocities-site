@@ -5,9 +5,11 @@
 body {
     height:100vh;
     z-index: 0;
-    background-color: red;
-    background-image: linear-gradient(red, yellow);
-}
+    background-color: #224ba3;
+    /*Actual link, but google loooves making links ludicrously huge: https://drive.google.com/thumbnail?id=13Kcgm-giDxu0zxtfDem8C5uPr9B1sVxa&sz=w2560*/
+    background-image: url("https://lh3.googleusercontent.com/fife/ALs6j_Hl2EBympqoob5lZV4mkLAfF5whWUH72PXDCo8eVQmWey7Ont0_HWXAY2Bsn-F_oAfda5W5Smxt-FJJ0JLaU8oZQPYlbzD5l0XnShbU1oVjCJBbIRUQzuOI9yCROMwJVnQd6uZaTSj4BIcHlsFDjPL4Z4UglKwHAi3-PTcPDgdgjkJIPgCvLT1RVPcUYRMwD6ehF5QLzWLhwWz1X_pozNkkdTQvJZSHDpyCL1j72kAorUN6RnPpjBoVqh_zsCAUAIGAw-1gREeKcq1a8dXpSFYeDyFqhUMDdAqbRKi2RspbZfJvVppdmfxpI_w81FA7RlQJCu0PZgZiqhGnbzi-SiAD4zi_w0BPcK7h2OS_z2nMwCX7l7kpmST64WNxHJF-giczlFeRmd6HQJxd-GwqO4MV36sTcIEwHT8xUn10wFsPwcZQWjLr81E3rwkC2znX2VqFmp7VAVXRGVLVGTFUOR-8yvgJZwDZGTzvB5RVwd-ExlB6KDEoHpDraza4ekCVy_vJPe6nPhjGYqcPoqhmzPLDe5fPRw3UWA_g33c7iNvdUthWaIqhGaGNydNGt8xFpiUxAj0CLTCDQVk7R2ZmjuTNgGM3hf2ZEari1z4Yb1IbaVa2cr0UCSVBiPHqwZaF9DITXHWil0Qfks07FscL8RLGSHbUedNA2E_KSGzvBV2JVMeHulp6fT-vj4tIioIeGx3mB8MROa0Cr0t3eOXkiSOyJsQl1rG3RnJSG4f2m4-eVmiobr30U7xZXa3MZV6f39imalqMfQI-QXc9XW4BixoyQRESPqm0thOQ11gpkLUFxKgnpUArgs1QR7OJj6o4Jgzu7vEsU62feo7BU_r39_5yBM7ipi8DuwH-Tv6fv1LPaSI5uX4vL6-B57n-CPHUivN13_LF4zar7hNgfALXUEa6n8RwaEdL6L98r9af-sBzGDVD5z5PKrgcxxR72pxtwvK-bRKXd3jZhlA34CVUjL89yk4TW-cRkjtd8H5tmTAEHl7CZ80PzPQn6XjkpFbKCRSvZqj0fEcVQUILNoNPzCVrPjC4BS208vBiaGrMfJ3hyWwg8YNUjrv1AkhD0QLGqgJcly1Afv9w9gqKu4Pjw0HfIqQnf0P8PQY7tYynI8LAvKf4Bz0griawVDwdHmISW4mTnXMpYxAyEy6-pmZuiAvEgvCnLjTfXq6_bvv8oACSlqTcx3FGnZx3lPs5X6OGvyIZw0TRJSnUaEHVJXOojeJlJ-PaDLxGfC6GWVFcPd_ZLngCKuUoLaPu9DYPWwX7-Is2JKzatcdYu06NrzKXVYpSbu6V0AyNDKQXTq7rlyHRX5d8Yng5cshonUk1jyCTaQCFoMHHcfbUgKQRvXNv7IHGoFfA81_qTWs2OkuK-GogpZHsB7fLCpP0VpS1oAkpSb-jh257VI7YxbxXObY14CpKL2qsUer0zBeoglrV2wgGZ57HHHs3Z_HlYQvvnAL8rpwb6DcTFnHpYZGwcBognk7OG9-JMZ08whvn8e9Dq154_21n0SqLvW7rh3UprFCyI0nrEGm7FFWAS0fPGGlv9belWDqrWtT4g0JtG8JIUfyEdvZdU5wodlr3wuSWJJmmJqLm6I_baFq9hYE=w2560?authuser=0");
+    background-repeat: no-repeat;
+    background-size:100vw 130vh;
 h1{
     font-weight: bold;
     font-size: 64px;
@@ -52,8 +54,7 @@ h1{
     background-color: white;
 }
 #content h1, p{
-    margin: 0 20px;
-    padding: 5px 0;
+    padding: 5px 20px;
 }
 #sidebar {
     position: inherit;
