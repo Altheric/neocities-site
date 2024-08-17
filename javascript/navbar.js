@@ -4,7 +4,6 @@ const currentPage = document.title.split(": ")[1];
 //Now, an object of pages.
 const listOfPages = {
     "Home": "index.html" ,
-    "Blackjack": "blackjack.html"
 };
 //Navbar id.
 const navBar = document.getElementById('navbar');

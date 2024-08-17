@@ -1,14 +1,27 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+}
 body {
     height:100vh;
+    z-index: 0;
     background-color: red;
     background-image: linear-gradient(red, yellow);
 }
+h1{
+    font-weight: bold;
+    font-size: 64px;
+}
 #navbar{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    margin-top:2%;
     font-size: 32px;
     background-color: #f44336;
     color: black;
-    top:0;
-    position: sticky;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 /*Disabled the pointer events so the non-link doesn't glow up when hovered over.*/
 #navbar li {
@@ -25,8 +38,39 @@ body {
     color: white;
     pointer-events: auto;
 }
-
-h1{
-    font-weight: bold;
-    font-size: 64px;
+#content{
+    position: relative;
+    z-index: 1;
+    left: 5%;
+    width: 90%;
+    min-height: 80vh;   
+    border-left: 10px solid #f44336;
+    border-right: 10px solid #f44336;
+    border-bottom: 10px solid #f44336;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: white;
+}
+#content h1, p{
+    margin: 0 20px;
+    padding: 5px 0;
+}
+#sidebar {
+    position: inherit;
+    z-index: 2;
+    float:right;
+    clear:right;
+    border-bottom-right-radius: 25px;
+    border-left: 10px solid #f44336;
+    border-bottom: 10px solid #f44336;
+    min-height: 80vh;
+    min-width: 15%;
+    max-width: 15%;
+}
+footer{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    margin-top: 20px;
+    text-align:right;
 }
