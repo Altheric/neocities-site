@@ -1,12 +1,11 @@
 //Populate the navbar dynamically, so we don't need to edit the navbar for every new site added.
 //First, get the current page.
-const currentPage = window.location.pathname.split("/").pop();
+const currentPage = document.title.split(": ")[1];
 //Now, an object of pages.
 const listOfPages = {
-    "" : "Home",
-    "about" : "About"
+    "Home": "index.html" ,
+    "Blackjack": "blackjack.html"
 };
-console.log(currentPage);
 //Navbar id.
 const navBar = document.getElementById('navbar');
 //And the unorganized list to append to.
@@ -17,13 +16,13 @@ var pages = Object.keys(listOfPages)
 pages.forEach(page => {
     var newListElement = document.createElement("li");
     //Check if the page is the current page, if it is not, create a link element to append to the list element.
-    if(currentPage != page){
+    if(currentPage != page || currentPage === null){
         var newPage = document.createElement("a")
-        newPage.href = page;
-        newPage.innerHTML = listOfPages[page]
+        newPage.href = listOfPages[page];
+        newPage.innerHTML = page
         newListElement.appendChild(newPage)
     } else {
-        newListElement.innerHTML = listOfPages[page];
+        newListElement.innerHTML = page;
     }
     navList.appendChild(newListElement);
 });

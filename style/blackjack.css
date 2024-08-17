@@ -1,0 +1,31 @@
+h1{
+    padding-top:20px;
+    font-weight: bold;
+    font-size: 32px;
+    display:block;
+}
+#play-screen {
+    display: block;
+}
+.card-hand{
+    padding-top:20px;
+    min-height: 200px;
+    visibility: hidden;
+    font-size: 128px;
+}
+
+button {
+    padding: 32px 64px;
+    font-size: 32px;
+    background-color: #ff4e41;
+    border: none;
+}
+button:hover {
+    background-color: #af3930;
+}
+#pass-button{
+    display:none;
+}
+#replay-button{
+    display: none;
+}

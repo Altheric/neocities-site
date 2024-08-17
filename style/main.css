@@ -1,9 +1,31 @@
+body {
+    height:100vh;
+    background-color: red;
+    background-image: linear-gradient(red, yellow);
+}
 #navbar{
     font-size: 32px;
+    background-color: #f44336;
+    color: black;
+    top:0;
+    position: sticky;
 }
+/*Disabled the pointer events so the non-link doesn't glow up when hovered over.*/
 #navbar li {
+    text-align: center;  
     display: inline-block;
+    padding: 14px 25px;
+    pointer-events: none;
 }
+#navbar li:hover{
+    background-color: #a12b23;
+}
+#navbar a {
+    text-decoration: none;
+    color: white;
+    pointer-events: auto;
+}
+
 h1{
     font-weight: bold;
     font-size: 64px;
