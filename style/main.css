@@ -6,24 +6,26 @@ body {
     height:100vh;
     z-index: 0;
     background-color: #224ba3;
-    /*Actual link, but google loooves making links ludicrously huge: https://drive.google.com/thumbnail?id=13Kcgm-giDxu0zxtfDem8C5uPr9B1sVxa&sz=w2560*/
-    background-image: url("https://lh3.googleusercontent.com/fife/ALs6j_Hl2EBympqoob5lZV4mkLAfF5whWUH72PXDCo8eVQmWey7Ont0_HWXAY2Bsn-F_oAfda5W5Smxt-FJJ0JLaU8oZQPYlbzD5l0XnShbU1oVjCJBbIRUQzuOI9yCROMwJVnQd6uZaTSj4BIcHlsFDjPL4Z4UglKwHAi3-PTcPDgdgjkJIPgCvLT1RVPcUYRMwD6ehF5QLzWLhwWz1X_pozNkkdTQvJZSHDpyCL1j72kAorUN6RnPpjBoVqh_zsCAUAIGAw-1gREeKcq1a8dXpSFYeDyFqhUMDdAqbRKi2RspbZfJvVppdmfxpI_w81FA7RlQJCu0PZgZiqhGnbzi-SiAD4zi_w0BPcK7h2OS_z2nMwCX7l7kpmST64WNxHJF-giczlFeRmd6HQJxd-GwqO4MV36sTcIEwHT8xUn10wFsPwcZQWjLr81E3rwkC2znX2VqFmp7VAVXRGVLVGTFUOR-8yvgJZwDZGTzvB5RVwd-ExlB6KDEoHpDraza4ekCVy_vJPe6nPhjGYqcPoqhmzPLDe5fPRw3UWA_g33c7iNvdUthWaIqhGaGNydNGt8xFpiUxAj0CLTCDQVk7R2ZmjuTNgGM3hf2ZEari1z4Yb1IbaVa2cr0UCSVBiPHqwZaF9DITXHWil0Qfks07FscL8RLGSHbUedNA2E_KSGzvBV2JVMeHulp6fT-vj4tIioIeGx3mB8MROa0Cr0t3eOXkiSOyJsQl1rG3RnJSG4f2m4-eVmiobr30U7xZXa3MZV6f39imalqMfQI-QXc9XW4BixoyQRESPqm0thOQ11gpkLUFxKgnpUArgs1QR7OJj6o4Jgzu7vEsU62feo7BU_r39_5yBM7ipi8DuwH-Tv6fv1LPaSI5uX4vL6-B57n-CPHUivN13_LF4zar7hNgfALXUEa6n8RwaEdL6L98r9af-sBzGDVD5z5PKrgcxxR72pxtwvK-bRKXd3jZhlA34CVUjL89yk4TW-cRkjtd8H5tmTAEHl7CZ80PzPQn6XjkpFbKCRSvZqj0fEcVQUILNoNPzCVrPjC4BS208vBiaGrMfJ3hyWwg8YNUjrv1AkhD0QLGqgJcly1Afv9w9gqKu4Pjw0HfIqQnf0P8PQY7tYynI8LAvKf4Bz0griawVDwdHmISW4mTnXMpYxAyEy6-pmZuiAvEgvCnLjTfXq6_bvv8oACSlqTcx3FGnZx3lPs5X6OGvyIZw0TRJSnUaEHVJXOojeJlJ-PaDLxGfC6GWVFcPd_ZLngCKuUoLaPu9DYPWwX7-Is2JKzatcdYu06NrzKXVYpSbu6V0AyNDKQXTq7rlyHRX5d8Yng5cshonUk1jyCTaQCFoMHHcfbUgKQRvXNv7IHGoFfA81_qTWs2OkuK-GogpZHsB7fLCpP0VpS1oAkpSb-jh257VI7YxbxXObY14CpKL2qsUer0zBeoglrV2wgGZ57HHHs3Z_HlYQvvnAL8rpwb6DcTFnHpYZGwcBognk7OG9-JMZ08whvn8e9Dq154_21n0SqLvW7rh3UprFCyI0nrEGm7FFWAS0fPGGlv9belWDqrWtT4g0JtG8JIUfyEdvZdU5wodlr3wuSWJJmmJqLm6I_baFq9hYE=w2560?authuser=0");
+    background-image: url("https://i.imgur.com/npY96ZK.jpg");
     background-repeat: no-repeat;
     background-size:100vw 130vh;
+}
 h1{
     font-weight: bold;
     font-size: 64px;
 }
+
+
+/*Navigation bar*/
 #navbar{
     position: relative;
     left: 5%;
     width: 90%;
     margin-top:2%;
     font-size: 32px;
-    background-color: #f44336;
-    color: black;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    background-color: #41230b;
+    color: white;
+    background-image:url("https://i.imgur.com/s5eMWRE.png");
 }
 /*Disabled the pointer events so the non-link doesn't glow up when hovered over.*/
 #navbar li {
@@ -31,47 +33,96 @@ h1{
     display: inline-block;
     padding: 14px 25px;
     pointer-events: none;
+    
 }
 #navbar li:hover{
-    background-color: #a12b23;
+    background-color: black;
+    opacity:0.5;
 }
 #navbar a {
     text-decoration: none;
-    color: white;
     pointer-events: auto;
 }
+#navbar a:link {
+    color: white
+}
+#navbar a:visited{
+    color:white;
+}
+#navbar a:active{
+    color:#636363;
+}
+
+
+/*Additional Appearance Elements*/
+#vineleft{
+    pointer-events: none;
+    z-index: 5;
+    position: absolute;
+    top: -4vh;
+    left: -8vh;
+    width:20%;
+    height: 109vh;
+    transform:rotate(2deg)
+}
+#vineright {
+    pointer-events: none;
+    z-index: 5;
+    position: absolute;
+    top: -4vh;
+    right: -8vh;
+    width:20%;
+    height: 109vh;
+    transform:rotate(-2deg)
+}
+
+
+/*Content*/
 #content{
+    background-color: black;
+    background-image:url("https://i.imgur.com/faAFvX2.png");
+    background-size:50vw 60vh;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     left: 5%;
     width: 90%;
-    min-height: 80vh;   
-    border-left: 10px solid #f44336;
-    border-right: 10px solid #f44336;
-    border-bottom: 10px solid #f44336;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    background-color: white;
+    min-height: 80vh;
+    border-left: 10px solid #41230b;
+    border-right: 10px solid #41230b;
+    border-bottom: 10px solid #41230b;
+    border-image: url("https://i.imgur.com/s5eMWRE.png") 20 stretch;
 }
 #content h1, p{
+    color: white;
     padding: 5px 20px;
 }
+
+
+/*Sidebar*/
 #sidebar {
     position: inherit;
-    z-index: 2;
+    z-index: 3;
     float:right;
     clear:right;
-    border-bottom-right-radius: 25px;
-    border-left: 10px solid #f44336;
-    border-bottom: 10px solid #f44336;
+    border-left: 10px solid #41230b;;
+    border-bottom: 10px solid #41230b;;
+    border-image: url("https://i.imgur.com/s5eMWRE.png") 20 stretch;
     min-height: 80vh;
     min-width: 15%;
     max-width: 15%;
 }
+
+
+/*Footer*/
 footer{
+    color:black;
     position: relative;
     left: 5%;
     width: 90%;
     margin-top: 20px;
     text-align:right;
+}
+
+footer p{
+    color:black;
 }
