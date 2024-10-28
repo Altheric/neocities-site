@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altheresy Postings: Home</title>
+    <title>Altheresy Postings</title>
     <link rel ="stylesheet" href="style/main.css">
-    <script src="javascript/base_components.js"></script>
 </head>
 <body>
-    <nav-bar></nav-bar>
+    <nav>
+        <ul>
+            <li><a class="nav-link" name="Home" href="index.html?home">Home</a></li>
+            <li><a class="nav-link" name="About" href="index.html?about">About</a></li>
+        </ul>
+    </nav>
     <div id="content">
-        <h1>Welcome to my page!</h1>
-        <p>Here I do... things. Honestly don't know what, yet.</p>
+        <current-page></current-page>
     </div>
     <footer>
         <p>&copy;lololol 2024</p>
     </footer>
 </body>
+<script src="javascript/router.js"></script>
 </html>
