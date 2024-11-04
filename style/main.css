@@ -68,8 +68,8 @@ h1{
 }
 
 
-/*Navigation bar*/
-nav-bar nav {
+/*Navigation component*/
+nav {
     position: relative;
     left: 5%;
     width: 90%;
@@ -79,26 +79,32 @@ nav-bar nav {
     color: white;
 }
 /*Disabled the pointer events so the non-link doesn't glow up when hovered over.*/
-nav-bar li {
+nav li {
     text-align: center;  
     display: inline-block;
     padding: 14px 25px;
     pointer-events: none;
     
 }
-nav-bar li:hover{
+nav li:hover{
     background-color: black;
     opacity:0.5;
 }
-nav-bar a {
+nav a {
     text-decoration: none;
     pointer-events: auto;
 }
-nav-bar a:link, nav-bar a:visited {
+nav a:link, nav a:visited {
     color: white
 }
-nav-bar a:active{
+nav a:active{
     color:#636363;
+}
+nav #current-link {
+    text-decoration: none;
+    pointer-events: none;
+    color:#636363;
+    
 }
 
 
@@ -121,8 +127,8 @@ nav-bar a:active{
 }
 
 
-/*Sidebar*/
-#sidebar {
+/*Sidecomponent*/
+#sidecomponent {
     position: inherit;
     z-index: 3;
     float:right;
