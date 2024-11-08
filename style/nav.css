@@ -1,11 +1,11 @@
-/*Navigation component*/
+@import url('vars.css');
 nav {
     position: relative;
     left: 5%;
     width: 90%;
     margin-top:2%;
     font-size: 32px;
-    background-color: #41230b;
+    background-color: var(--content-border-color);
     color: white;
 }
 /*Disabled the pointer events so the non-link doesn't glow up when hovered over.*/
@@ -25,7 +25,7 @@ nav a {
     pointer-events: auto;
 }
 nav a:link, nav a:visited {
-    color: white
+    color: var(--content-text-color);
 }
 nav a:active{
     color:#636363;

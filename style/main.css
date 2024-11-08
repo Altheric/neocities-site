@@ -1,4 +1,5 @@
 @import url('reset.css');
+@import url('vars.css');
 @import url('nav.css');
 * {
     box-sizing: border-box;
@@ -7,7 +8,7 @@
 body {
     height:100vh;
     z-index: 0;
-    background-color: #224ba3;
+    background-color: var(--body-bg-color);
     background-image: url("https://i.imgur.com/npY96ZK.jpg");
     background-repeat: no-repeat;
     background-size:100vw 130vh;
@@ -19,19 +20,19 @@ h1{
 
 /*Content*/
 #content{
-    background-color: black;
+    background-color: var(--content-bg-color);
     background-size:50vw 60vh;
     position: relative;
     z-index: 2;
     left: 5%;
     width: 90%;
     min-height: 80vh;
-    border-left: 10px solid #41230b;
-    border-right: 10px solid #41230b;
-    border-bottom: 10px solid #41230b;
+    border-left: 10px solid var(--content-border-color);
+    border-right: 10px solid var(--content-border-color);
+    border-bottom: 10px solid var(--content-border-color);
 }
 #content h1, p{
-    color: white;
+    color: var(--content-text-color);
     padding: 5px 20px;
 }
 
@@ -42,8 +43,8 @@ h1{
     z-index: 3;
     float:right;
     clear:right;
-    border-left: 10px solid #41230b;;
-    border-bottom: 10px solid #41230b;;
+    border-left: 10px solid var(--content-border-color);
+    border-bottom: 10px solid var(--content-border-color);
     min-height: 80vh;
     min-width: 15%;
     max-width: 15%;
@@ -51,7 +52,6 @@ h1{
 
 /*Footer*/
 footer{
-    color:black;
     position: relative;
     left: 5%;
     width: 90%;
@@ -60,5 +60,5 @@ footer{
 }
 
 footer p{
-    color:black;
+    color:var(--body-text-color);
 }

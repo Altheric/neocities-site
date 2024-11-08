@@ -1,0 +1,11 @@
+:root {
+    /*BACKGROUND*/
+    --body-bg-color: #224ba3;
+    --content-bg-color: black;
+    /*BORDER*/
+    --content-border-color: #41230b;
+
+    /*TEXT*/
+    --body-text-color: black;
+    --content-text-color: white;
+}
