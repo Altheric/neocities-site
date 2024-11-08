@@ -1,27 +1,25 @@
+//Imports
+import { capitalize } from "./helpers.js";
+
+//Vars
 const queryLocation = window.location.search.substring(1);
 const nav = document.getElementsByClassName('nav-link');
+
 //Valid locations to navigate to on site.
 const validLocations = ['home', 'about'];
-console.log(nav.namedItem())
+const validLocName = validLocations.includes(queryLocation) ? capitalize(queryLocation) : 'Home';
+
 class CurrentPage extends HTMLElement {
 
     async connectedCallback() {
-        let res = validLocations.includes(queryLocation) ? await fetch(`pages/${queryLocation}.html`) : await fetch( 'pages/home.html');
+        let res = await fetch(`pages/${validLocName.toLowerCase()}.html`);
 
         this.innerHTML = await res.text()
     }
 
 }
 
-switch(queryLocation){
-    case 'about':
-        customElements.define( 'current-page', CurrentPage )
-        document.title = "Altheresy Postings: About";
-        nav.namedItem('About').id='current-link';
-        break;
-    default:
-        customElements.define( 'current-page', CurrentPage )
-        document.title = "Altheresy Postings: Home";
-        nav.namedItem('Home').id='current-link';
-        break;
-}
+//Execution
+customElements.define( 'current-page', CurrentPage )
+document.title = `Altheresy Postings: ${validLocName}`;
+nav.namedItem(validLocName).id='current-link';

@@ -1,0 +1,38 @@
+/*Navigation component*/
+nav {
+    position: relative;
+    left: 5%;
+    width: 90%;
+    margin-top:2%;
+    font-size: 32px;
+    background-color: #41230b;
+    color: white;
+}
+/*Disabled the pointer events so the non-link doesn't glow up when hovered over.*/
+nav li {
+    text-align: center;  
+    display: inline-block;
+    padding: 14px 25px;
+    pointer-events: none;
+    
+}
+nav li:hover{
+    background-color: black;
+    opacity:0.5;
+}
+nav a {
+    text-decoration: none;
+    pointer-events: auto;
+}
+nav a:link, nav a:visited {
+    color: white
+}
+nav a:active{
+    color:#636363;
+}
+nav #current-link {
+    text-decoration: none;
+    pointer-events: none;
+    color:#636363;
+    
+}
