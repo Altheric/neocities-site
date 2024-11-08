@@ -11,7 +11,7 @@ const validLocName = validLocations.includes(queryLocation) ? capitalize(queryLo
 class CurrentPage extends HTMLElement {
 
     async connectedCallback() {
-        let res = await fetch(`pages/${validLocations.toLowerCase()}.html`);
+        let res = await fetch(`pages/${validLocName.toLowerCase()}.html`);
 
         this.innerHTML = await res.text()
     }
