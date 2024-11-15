@@ -1,17 +1,14 @@
 //Imports
-import { capitalize } from "./helpers.js";
+import { routes } from "./routes.js";
 
 //Vars
 const queryLocation = window.location.search.substring(1);
 const nav = document.getElementsByClassName('nav-link');
-//Valid locations to navigate to on site.
-const validLocations = ['home', 'about'];
-const validLocName = validLocations.includes(queryLocation) ? capitalize(queryLocation) : 'Home';
-
+const validQueryLocation = Object.keys(routes).includes(queryLocation) ? queryLocation : 'home'
 class CurrentPage extends HTMLElement {
 
     async connectedCallback() {
-        let res = await fetch(`pages/${validLocName.toLowerCase()}.html`);
+        let res = await fetch(`pages/${routes[validQueryLocation].file}`);
 
         this.innerHTML = await res.text()
     }
@@ -20,5 +17,5 @@ class CurrentPage extends HTMLElement {
 
 //Execution
 customElements.define( 'current-page', CurrentPage )
-document.title = `Altheresy Postings: ${validLocName}`;
-nav.namedItem(validLocName).id='current-link';
+document.title = `Altheresy Postings: ${routes[validQueryLocation].title}`;
+nav.namedItem(routes[validQueryLocation].title).id='current-link';
