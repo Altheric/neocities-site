@@ -1,10 +1,9 @@
 @import url('vars.css');
 nav {
-    margin: var(--content-margins);
+    margin-left: var(--content-left-margin);
     width: 90%;
     margin-top:2%; 
-    background-color: var(--content-border-color);
-
+    background: var(--content-border-gradient);
     & li {
         text-align: center;  
         display: inline-block;

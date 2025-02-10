@@ -4,10 +4,11 @@
     background-color: var(--content-bg-color);
     background-size:50vw 60vh;
     z-index: 2;
-    margin: var(--content-margins);
+    margin-left: var(--content-left-margin);
     width: 90%;
     min-height: 80vh;
     border: var(--content-border);
+    border-radius: 0 0 150px 0;
     border-top: none;
     & a {
         color: var(--content-link-color);
@@ -34,9 +35,9 @@
 #sidebar {
     z-index: 3;
     border-left: var(--content-border);
-    min-height: 80vh;
-    min-width: 15%;
-    max-width: 15%; 
+    border-radius: 0 60px;
+    height: 50%;
+    margin-left: var(--content-left-margin);
     text-align: center;
     & > h2 {
         font-weight: bold;
@@ -45,7 +46,7 @@
         padding: 10px
     }
     & > ul{
-        border-top: var(--content-border);
+        
         padding-top: 10px;
         & > li {
             padding-bottom: 10px;

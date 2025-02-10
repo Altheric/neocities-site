@@ -5,8 +5,11 @@
     
     /*BORDER*/
     --content-border-color: #011c66;
+    --content-border-gradient-color: #0042d1;
 
-    --content-border: 5px solid var(--content-border-color);
+    --content-border-gradient: linear-gradient(0deg, var(--content-border-color) 60%, var(--content-border-gradient-color) 100%);
+    
+    --content-border: 10px solid var(--content-border-color);
 
     /*TEXT*/
     --body-text-color: black;
@@ -19,5 +22,5 @@
     --heading-secondary-size: 32px;
 
     /* MARGIN */
-    --content-margins: auto 0 0 5%
+    --content-left-margin: 5%
 }
