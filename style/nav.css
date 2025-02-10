@@ -1,10 +1,8 @@
 @import url('vars.css');
 nav {
-    position: relative;
-    left: 5%;
+    margin: var(--content-margins);
     width: 90%;
-    margin-top:2%;
-    font-size: 32px;
+    margin-top:2%; 
     background-color: var(--content-border-color);
 
     & li {
@@ -19,6 +17,7 @@ nav {
         opacity:0.5;
     }
     & a {
+        font-size: var(--heading-secondary-size);
         text-decoration: none;
         pointer-events: auto;
     }
@@ -26,11 +25,11 @@ nav {
         color: var(--content-text-color);
     }
     & a:active{
-        color:#636363;
+        color:var(--nav-link-active-color);
     }
     & #current-link {
         text-decoration: none;
         pointer-events: none;
-        color:#636363;
+        color:var(--nav-link-active-color);
     }
 }
