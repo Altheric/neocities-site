@@ -7,7 +7,7 @@ export const router = (queryLocation = '#home', routes) => {
 }
 /**Get the contents of the queried location. */
 const getPage = async (queryLocation = '#home', routes) => {
-    const content = document.getElementById('content')
+    const content = document.getElementById('router-content')
 
     let res = await fetch(`pages/${routes[queryLocation].file}`);
     console.log(res)

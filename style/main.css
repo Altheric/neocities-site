@@ -1,10 +1,12 @@
 @import url('reset.css');
 @import url('vars.css');
 @import url('nav.css');
+@import url('content.css');
 * {
     -moz-box-sizing: border-box; /* Firefox */
     box-sizing: border-box; 
 }
+
 body {
     height:100vh;
     z-index: 0;
@@ -13,42 +15,12 @@ body {
     background-repeat: no-repeat;
     background-size:100vw 130vh;
 }
+
 h1{
     font-weight: bold;
     font-size: 64px;
 }
 
-/*Content*/
-#content{
-    background-color: var(--content-bg-color);
-    background-size:50vw 60vh;
-    position: relative;
-    z-index: 2;
-    left: 5%;
-    width: 90%;
-    min-height: 80vh;
-    border-left: 10px solid var(--content-border-color);
-    border-right: 10px solid var(--content-border-color);
-    border-bottom: 10px solid var(--content-border-color);
-}
-#content h1, p{
-    color: var(--content-text-color);
-    padding: 5px 20px;
-}
-
-
-/*Sidecomponent*/
-#sidecomponent {
-    position: inherit;
-    z-index: 3;
-    float:right;
-    clear:right;
-    border-left: 10px solid var(--content-border-color);
-    border-bottom: 10px solid var(--content-border-color);
-    min-height: 80vh;
-    min-width: 15%;
-    max-width: 15%;
-}
 
 /*Footer*/
 footer{
@@ -57,8 +29,7 @@ footer{
     width: 90%;
     margin-top: 20px;
     text-align:right;
-}
-
-footer p{
-    color:var(--body-text-color);
+    & p {
+        color:var(--body-text-color);
+    }
 }

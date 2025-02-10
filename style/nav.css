@@ -6,33 +6,31 @@ nav {
     margin-top:2%;
     font-size: 32px;
     background-color: var(--content-border-color);
-    color: white;
-}
-/*Disabled the pointer events so the non-link doesn't glow up when hovered over.*/
-nav li {
-    text-align: center;  
-    display: inline-block;
-    padding: 14px 25px;
-    pointer-events: none;
-    
-}
-nav li:hover{
-    background-color: black;
-    opacity:0.5;
-}
-nav a {
-    text-decoration: none;
-    pointer-events: auto;
-}
-nav a:link, nav a:visited {
-    color: var(--content-text-color);
-}
-nav a:active{
-    color:#636363;
-}
-nav #current-link {
-    text-decoration: none;
-    pointer-events: none;
-    color:#636363;
-    
+
+    & li {
+        text-align: center;  
+        display: inline-block;
+        padding: 14px 25px;
+        /*Disabled the pointer events so the non-link doesn't glow up when hovered over.*/
+        pointer-events: none;
+    }
+    & li:hover {
+        background-color: black;
+        opacity:0.5;
+    }
+    & a {
+        text-decoration: none;
+        pointer-events: auto;
+    }
+    & a:link, a:visited {
+        color: var(--content-text-color);
+    }
+    & a:active{
+        color:#636363;
+    }
+    & #current-link {
+        text-decoration: none;
+        pointer-events: none;
+        color:#636363;
+    }
 }
