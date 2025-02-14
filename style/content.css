@@ -4,11 +4,12 @@
     background-color: var(--content-bg-color);
     background-size:50vw 60vh;
     z-index: 2;
+    
     margin-left: var(--content-left-margin);
     width: 90%;
     min-height: 80vh;
     border: var(--content-border);
-    border-radius: 0 0 150px 0;
+    border-radius: 0 0 50px 50px;
     border-top: none;
     & a {
         color: var(--content-link-color);
@@ -22,8 +23,8 @@
     }
 }
 
-/*Router Content*/
-#router-content{
+/*Page Content*/
+#page-content{
     width:85%;
     & p, pre, h1{
         color: var(--content-text-color);
@@ -37,6 +38,7 @@
     border-left: var(--content-border);
     border-radius: 0 60px;
     height: 50%;
+    max-width:30%;
     margin-left: var(--content-left-margin);
     text-align: center;
     & > h2 {
@@ -46,10 +48,11 @@
         padding: 10px
     }
     & > ul{
-        
-        padding-top: 10px;
         & > li {
-            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        & > li:last-child {
+            margin-bottom: 30%;
         }
     }
 }

@@ -8,7 +8,7 @@ export const populateNav = (queryLocation, routes) => {
         const a = document.createElement('a');
         a.href = `index.html?${route}`
         a.innerHTML = routes[route].title;
-        route == queryLocation ? a.setAttribute('id', 'current-link') : null
+        route == queryLocation ? a.setAttribute('id', 'active-page') : null
         li.appendChild(a);
         navList.appendChild(li);
     });
