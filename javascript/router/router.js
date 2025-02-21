@@ -9,6 +9,10 @@ export const router = (queryLocation = '#home', routes) => {
 const getPage = async (queryLocation = '#home', routes) => {
     const content = document.getElementById('page-content')
 
-    let res = await fetch(`pages/${routes[queryLocation].file}`);
-    content.innerHTML = await res.text()
+    try {
+        let res = await fetch(`pages/${routes[queryLocation].file}`);
+        content.innerHTML = await res.text()
+    } catch (NetworkError) {
+        content.innerHTML = `<h1>Either the page couldn't be found or something else went horribly wrong!</h1>`
+    }
 }

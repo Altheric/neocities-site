@@ -1,3 +1,5 @@
+@import url('sidebar.css');
+
 /*Content*/
 #content{
     display: flex;
@@ -32,27 +34,3 @@
     }
 }
 
-/*Sidebar*/
-#sidebar {
-    z-index: 3;
-    border-left: var(--content-border);
-    border-radius: 0 60px;
-    height: 50%;
-    max-width:30%;
-    margin-left: var(--content-left-margin);
-    text-align: center;
-    & > h2 {
-        font-weight: bold;
-        font-size: var(--heading-secondary-size);
-        color: var(--content-text-color);
-        padding: 10px
-    }
-    & > ul{
-        & > li {
-            padding-top: 10px;
-        }
-        & > li:last-child {
-            margin-bottom: 30%;
-        }
-    }
-}
