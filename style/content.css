@@ -12,9 +12,7 @@
     border: var(--content-border);
     border-radius: 0 0 50px 50px;
     border-top: none;
-    & p, pre, h1, h2, h3 {
-        color: var(--content-text-color);
-    }
+    color: var(--content-text-color);
     & a {
         color: var(--content-link-color);
         text-decoration: none;
