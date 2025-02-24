@@ -4,7 +4,6 @@
 #content{
     display: flex;
     background-color: var(--content-bg-color);
-    background-size:50vw 60vh;
     z-index: 2;
     
     margin-left: var(--content-left-margin);
@@ -13,6 +12,9 @@
     border: var(--content-border);
     border-radius: 0 0 50px 50px;
     border-top: none;
+    & p, pre, h1, h2, h3 {
+        color: var(--content-text-color);
+    }
     & a {
         color: var(--content-link-color);
         text-decoration: none;
@@ -27,9 +29,8 @@
 
 /*Page Content*/
 #page-content{
-    width:85%;
+    width:90%;
     & p, pre, h1{
-        color: var(--content-text-color);
         padding: 5px 20px;
     }
 }
