@@ -3,6 +3,7 @@
     overflow: hidden;
     z-index: 3;
     width:250px;
+    height: 100%;
     @media(min-width: 2200px){
         width: 10%;
     }
@@ -25,11 +26,9 @@
     }
 }
 
-
-
-#sidebar:hover > * {
+/* #sidebar:hover > * {
     left: 0%;
-}
+} */
 
 #sidebar-tab {
     float: left;
