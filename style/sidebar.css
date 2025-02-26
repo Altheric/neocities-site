@@ -1,33 +1,40 @@
 /*Sidebar*/
 #sidebar {
-    display: flex;
     overflow: hidden;
     z-index: 3;
-    width:200px;
+    width:250px;
+    @media(min-width: 2200px){
+        width: 10%;
+    }
     & > * {
         position: relative;
         left: 80%;
         transition: left 1s;
         text-align: center;
     }
-    & > ul {
-        & h3 {
-            font-weight: bold;
-            font-size: var(--heading-secondary-size);
-            padding: 10px
-        }
+    & h3 {
+        font-weight: bold;
+        font-size: var(--heading-secondary-size);
+        padding: 10px
+    }
+    & ul, h3{
+        margin-right: 5px;
         & li {
             padding-top: 10px;
         }
     }
 }
 
+
+
 #sidebar:hover > * {
     left: 0%;
 }
 
 #sidebar-tab {
+    float: left;
     background-color: var(--content-border-color);
+    margin-right: 5px;
     position: relative;
     height: 250px;
     width: 20%;
