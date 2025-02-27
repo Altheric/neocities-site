@@ -2,13 +2,13 @@
 
 /*Content*/
 #content{
-    display: flex;
-    background-color: var(--content-bg-color);
-    z-index: 2;
     
+    display: flex;
+    z-index: 1;
     margin-left: var(--content-left-margin);
     width: 90%;
     min-height: 80vh;
+    background-color: var(--content-bg-color);
     border: var(--content-border);
     border-radius: 0 0 50px 50px;
     border-top: none;

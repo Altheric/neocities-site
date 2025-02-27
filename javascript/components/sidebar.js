@@ -1,9 +1,9 @@
 const sidebarChildren = document.getElementById('sidebar').children
-const sidebarTab = document.getElementById('sidebar-tab')
 
 let isClosed = true;
 
-sidebarTab.addEventListener('click', (event) => {
+/** Toggle the sidebar's position on event trigger. */
+export const sidebarToggle = () => {
     if (isClosed){;
         sidebarChildren[0].style.left = '0%'
         sidebarChildren[1].style.left = '0%'
@@ -15,4 +15,4 @@ sidebarTab.addEventListener('click', (event) => {
         sidebarChildren[2].style.left = '80%'
         isClosed = true;
     }
-})
+}

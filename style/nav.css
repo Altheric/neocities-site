@@ -1,5 +1,6 @@
 @import url('vars.css');
 nav {
+    z-index: 1;
     margin-left: var(--content-left-margin);
     width: 90%;
     margin-top:2%; 

@@ -1,13 +1,17 @@
-//Imports
+// Imports
 import { routes } from "./router/routes.js";
 import { router } from "./router/router.js";
 import { populateNav } from "./components/nav.js";
-import * as sidebar from './components/sidebar.js'
+import { sidebarToggle } from './components/sidebar.js'
 
-//Vars
+// Vars
 const queryLocation = window.location.search.substring(1);
 const validQueryLocation = Object.keys(routes).includes(queryLocation) ? queryLocation : 'home'
+const sidebarTab = document.getElementById('sidebar-tab');
 
-//Functions
+// Functions
 router(validQueryLocation, routes);
 populateNav(validQueryLocation, routes);
+
+// Listeners
+sidebarTab.addEventListener('click', sidebarToggle)

@@ -17,6 +17,10 @@ body {
     background-size:100vw 130vh;
 }
 
+a, p, pre, h1, h2, h3 {
+    font-family: "Iceland", sans-serif;
+} 
+
 h1{
     font-weight: bold;
     font-size: var(--heading-main-size);
