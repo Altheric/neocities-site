@@ -18,8 +18,9 @@
     --content-link-visited-color: #8e59ff;
     --nav-link-active-color: #4d74df;
 
-    --heading-main-size: 64px;
-    --heading-secondary-size: 32px;
+    --nav-text-size: 32px;
+    --heading-main-size: 84px;
+    --heading-secondary-size: 48px;
 
     /* MARGIN */
     --content-left-margin: 5%

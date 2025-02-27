@@ -2,7 +2,6 @@
 
 /*Content*/
 #content{
-    
     display: flex;
     z-index: 1;
     margin-left: var(--content-left-margin);
@@ -10,8 +9,9 @@
     min-height: 80vh;
     background-color: var(--content-bg-color);
     border: var(--content-border);
-    border-radius: 0 0 50px 50px;
     border-top: none;
+    border-bottom: none;
+    clip-path: polygon(100% 0, 100% 94%, 98% 100%, 2% 100%, 0 95%, 0 0);
     color: var(--content-text-color);
     & a {
         color: var(--content-link-color);

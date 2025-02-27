@@ -17,7 +17,7 @@ nav {
         opacity:0.5;
     }
     & a {
-        font-size: var(--heading-secondary-size);
+        font-size: var(--nav-text-size);
         text-decoration: none;
         pointer-events: auto;
     }

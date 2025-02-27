@@ -2,11 +2,8 @@
 #sidebar {
     overflow: hidden;
     z-index: 1;
-    width:250px;
+    width:300px;
     height: 100%;
-    @media(min-width: 2200px){
-        width: 10%;
-    }
     & > * {
         position: relative;
         left: 80%;
@@ -16,12 +13,22 @@
     & h3 {
         font-weight: bold;
         font-size: var(--heading-secondary-size);
-        padding: 10px
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    & h3:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 26%;
+        width: 72%;
+        border-bottom: 1px solid blue;
     }
     & ul, h3{
         margin-right: 5px;
         & li {
-            padding-top: 10px;
+            padding-top: 5px;
         }
     }
 }
@@ -30,15 +37,15 @@
     float: left;
     position: relative;
     z-index: 2;
-    height: 250px;
-    width: 45px;
-    margin-right: 5px;
+    height: 300px;
+    width: 60px;
+    margin-right: 7px;
     background-color: var(--content-border-color);
     cursor: pointer;
-    border-radius: 0 0 0 120px;
+    clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 90%, 0 0);
     & > h2 {
         position: relative;
-        top: 50px;
+        top: 40px;
         font-size: var(--heading-secondary-size);
         transform: rotate(90deg);
         text-wrap: nowrap;
@@ -53,4 +60,9 @@
     & > h2 {
         color: var(--nav-link-active-color);
     }
+}
+
+@media(min-width: 2200px){
+    #sidebar {width: 10%;}
+    #sidebar-tab {width: 20%;}
 }
