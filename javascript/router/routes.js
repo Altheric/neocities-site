@@ -6,5 +6,9 @@ export const routes = {
     about: {
         title: 'About',
         file: 'about.html'
+    },
+    gallery: {
+        title: 'Gallery',
+        file: 'gallery.html'
     }
 }

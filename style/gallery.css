@@ -1,0 +1,19 @@
+#gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 320px);
+}
+
+.gallery-item{
+    margin: 20px 10px 10px 20px;
+    width: 300px;
+    height: 190px;
+    text-align: center;
+    & > img{
+        width: 300px;
+        height: 169px;
+    }
+}
+
+.gallery-item:hover {
+    text-decoration: none;
+}

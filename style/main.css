@@ -2,6 +2,7 @@
 @import url('vars.css');
 @import url('nav.css');
 @import url('content.css');
+@import url('gallery.css');
 
 * {
     -moz-box-sizing: border-box; /* Firefox */
