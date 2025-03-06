@@ -10,7 +10,7 @@
 }
 
 body {
-    height:100vh;
+    height:100%;
     z-index: 0;
     background-color: var(--body-bg-color);
     background-image: url("https://i.imgur.com/npY96ZK.jpg");

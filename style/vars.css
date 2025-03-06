@@ -6,7 +6,8 @@
     /*BACKGROUND*/
     --body-bg-color: #224ba3;
     --content-bg-color: rgba(0, 0, 0, 0.9);
-    
+    --modal-bg-color: rgba(0, 0, 0, 0.7);
+
     /*BORDER*/
     --content-border-color: #e77000;
     --content-border-gradient-color: #ec994b;
