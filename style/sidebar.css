@@ -23,13 +23,16 @@
         bottom: 0;
         left: 26%;
         width: 72%;
-        border-bottom: 1px solid blue;
+        border-bottom: 1px solid var(--content-border-color);
     }
     & ul, h3{
         margin-right: 5px;
         & li {
             padding-top: 5px;
         }
+    }
+    & a:hover {
+        text-decoration: underline;    
     }
 }
 
@@ -62,7 +65,7 @@
     }
 }
 
-@media(min-width: 2200px){
+@media(min-width: var(--width-xl)){
     #sidebar {width: 10%;}
     #sidebar-tab {width: 20%;}
 }

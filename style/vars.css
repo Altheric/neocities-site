@@ -1,11 +1,15 @@
 :root {
+    /*SCREEN SIZES*/
+    --width-xl: 1981px;
+    --width-sm: 1279px;
+    
     /*BACKGROUND*/
     --body-bg-color: #224ba3;
     --content-bg-color: rgba(0, 0, 0, 0.9);
     
     /*BORDER*/
-    --content-border-color: #011c66;
-    --content-border-gradient-color: #0042d1;
+    --content-border-color: #e77000;
+    --content-border-gradient-color: #ec994b;
 
     --content-border-gradient: linear-gradient(0deg, var(--content-border-color) 60%, var(--content-border-gradient-color) 100%);
     
@@ -14,9 +18,9 @@
     /*TEXT*/
     --body-text-color: black;
     --content-text-color: white;
-    --content-link-color: #59f4ff;
+    --content-link-color: #ff8e59;
     --content-link-visited-color: #8e59ff;
-    --nav-link-active-color: #4d74df;
+    --nav-link-active-color: #8f3900;
 
     --nav-text-size: 32px;
     --heading-main-size: 84px;

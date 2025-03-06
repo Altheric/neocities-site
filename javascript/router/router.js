@@ -1,3 +1,5 @@
+const routerEvent = new CustomEvent("routed");
+
 /**Display the current page of the querylocation */
 export const router = (queryLocation = '#home', routes) => {
     
@@ -12,7 +14,9 @@ const getPage = async (queryLocation = '#home', routes) => {
     try {
         let res = await fetch(`pages/${routes[queryLocation].file}`);
         content.innerHTML = await res.text()
+        content.dispatchEvent(routerEvent);
     } catch (NetworkError) {
         content.innerHTML = `<h1>Either the page couldn't be found or something else went horribly wrong!</h1>`
+        content.dispatchEvent(routerEvent);
     }
 }

@@ -15,5 +15,15 @@
 }
 
 .gallery-item:hover {
-    text-decoration: none;
+    cursor: pointer;
+}
+.gallery-item:active {
+    opacity: 0.5;
+}
+
+#focused-image {
+    position: absolute;
+    z-index: 100;
+    bottom: 20%;
+    left: 50%;
 }
