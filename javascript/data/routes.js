@@ -9,6 +9,7 @@ export const routes = {
     },
     gallery: {
         title: 'Gallery',
-        file: 'gallery.html'
+        file: 'gallery.html',
+        js: true,
     }
 }

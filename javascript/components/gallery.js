@@ -1,11 +1,10 @@
+// Imports
+import { galleryItems } from "../data/galleryItems.js";
+
+// Variables
 let isShowing = false;
 
-/** Remove the focused image and make other elements clickable again. */
-const hide = (targetImage) => {
-    targetImage.remove()
-    isShowing = false;
-}
-
+// Functions
 /** Show a focused version of the image. */
 const show = (galleryImage) => {
     const newImage = document.createElement('div');
@@ -15,21 +14,40 @@ const show = (galleryImage) => {
     isShowing = true;
     
     newImage.addEventListener('click', (event) => {
-        hide(newImage);
+        newImage.remove()
+        isShowing = false;
     })
 
     document.body.append(newImage);
 };
 
-/** Add event listener to the gallery clickables. */
-export const galleryListener = () => {
-    const galleryItems = document.getElementsByClassName('gallery-item');
+/** Add gallery items with relevant events to the gallery html. */
+export const setupGallery = () => {
+    const galleryGrid = document.getElementById('gallery-grid')
     for (let index = 0; index < galleryItems.length; index++) {
-        const item = galleryItems[index];
-        item.addEventListener('click', (event) => {
+        const galleryItem = document.createElement("div");
+        const galleryImage = document.createElement("img");
+        
+        galleryItem.setAttribute('class', 'gallery-item');
+
+        galleryImage.src = galleryItems[index].link;
+        galleryImage.alt = galleryItems[index].alt  || galleryItems[index].alt !== '' ? galleryItems[index].alt : 'ADD ALT TEXT, NINCOMPOOP';
+
+        galleryItem.appendChild(galleryImage);
+        
+        if(galleryItems[index].subtitle){
+            const gallerySubtitle = document.createElement("p");
+            
+            gallerySubtitle.innerHTML = galleryItems[index].subtitle
+            galleryItem.appendChild(gallerySubtitle);
+        }
+
+        galleryItem.addEventListener('click', (event) => {
             if(!isShowing){
-                show(galleryItems[index].children[0])
+                show(galleryItem.children[0])
             }
         })
+
+        galleryGrid.appendChild(galleryItem);
     }
 }

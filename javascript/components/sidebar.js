@@ -1,7 +1,9 @@
+// Variables
 const sidebarChildren = document.getElementById('sidebar').children
 
 let isClosed = true;
 
+// Functions
 /** Toggle the sidebar's position on event trigger. */
 export const sidebarToggle = () => {
     if (isClosed){;
