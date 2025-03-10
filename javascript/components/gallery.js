@@ -23,6 +23,7 @@ const show = (galleryImage) => {
 
 /** Add gallery items with relevant events to the gallery html. */
 export const setupGallery = () => {
+    if (!galleryItems) return;
     const galleryGrid = document.getElementById('gallery-grid')
     for (let index = 0; index < galleryItems.length; index++) {
         const galleryItem = document.createElement("div");

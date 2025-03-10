@@ -34,6 +34,10 @@
     & a:hover {
         text-decoration: underline;    
     }
+    & li:nth-child(even) {
+        & a {color: var(--content-link-color-secondary)};
+     }
+    
 }
 
 #sidebar-tab {
@@ -69,3 +73,4 @@
     #sidebar {width: 10%;}
     #sidebar-tab {width: 20%;}
 }
+
