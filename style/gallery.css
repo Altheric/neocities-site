@@ -1,6 +1,6 @@
 #gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 320px);
+    grid-template-columns: repeat(auto-fit, 320px);
 }
 
 .gallery-item{
@@ -8,7 +8,7 @@
     width: 300px;
     height: 190px;
     text-align: center;
-    & > img{
+    & > img {
         max-width: 300px;
         max-height: 169px;
     }
@@ -19,6 +19,13 @@
 }
 .gallery-item:active {
     opacity: 0.5;
+}
+
+.errored-image:hover {
+    cursor: default;
+}
+.errored-image:active {
+    opacity: 100;
 }
 
 #focused-image {

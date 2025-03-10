@@ -26,27 +26,31 @@ export const setupGallery = () => {
     const galleryGrid = document.getElementById('gallery-grid')
     for (let index = 0; index < galleryItems.length; index++) {
         const galleryItem = document.createElement("div");
-        const galleryImage = document.createElement("img");
+        const galleryImage = new Image()
         
-        galleryItem.setAttribute('class', 'gallery-item');
-
         galleryImage.src = galleryItems[index].link;
-        galleryImage.alt = galleryItems[index].alt  || galleryItems[index].alt !== '' ? galleryItems[index].alt : 'ADD ALT TEXT, NINCOMPOOP';
-
+        galleryImage.alt = galleryItems[index].alt.length > 3 ? galleryItems[index].alt : 'ADD PROPER ALT TEXT, NINCOMPOOP';
         galleryItem.appendChild(galleryImage);
         
+        galleryImage.onerror = () => {
+            galleryItem.setAttribute('class', 'gallery-item errored-image')
+        };
+        
+        galleryImage.onload = () => {
+            galleryItem.setAttribute('class', 'gallery-item');
+            galleryItem.addEventListener('click', (event) => {
+                if(!isShowing){
+                    show(galleryItem.children[0])
+                }
+            })
+        }
+
         if(galleryItems[index].subtitle){
             const gallerySubtitle = document.createElement("p");
             
             gallerySubtitle.innerHTML = galleryItems[index].subtitle
             galleryItem.appendChild(gallerySubtitle);
-        }
-
-        galleryItem.addEventListener('click', (event) => {
-            if(!isShowing){
-                show(galleryItem.children[0])
-            }
-        })
+        }  
 
         galleryGrid.appendChild(galleryItem);
     }
