@@ -27,7 +27,7 @@ const getPage = async (queryLocation = '#home', location) => {
     try {
         let res = await fetch(`pages/${location.file}`);
         content.innerHTML = await res.text();
-        location.js ? setupPage(queryLocation) : 0;
+        if (location.js) setupPage(queryLocation);
     } catch (NetworkError) {
         content.innerHTML = `<h1>Either the page couldn't be found or something else went horribly wrong!</h1>`;
     }

@@ -6,7 +6,7 @@ import { sidebarToggle } from './components/sidebar.js'
 
 // Vars
 const queryLocation = window.location.search.substring(1);
-const validQueryLocation = Object.keys(routes).includes(queryLocation) ? queryLocation : 'home'
+const validQueryLocation = Object.keys(routes).includes(queryLocation) ? queryLocation : 'home';
 const sidebarTab = document.getElementById('sidebar-tab');
 
 // Functions
@@ -14,4 +14,4 @@ router(validQueryLocation, routes);
 populateNav(validQueryLocation, routes);
 
 // Listeners
-sidebarTab.addEventListener('click', sidebarToggle)
+sidebarTab.addEventListener('click', sidebarToggle);

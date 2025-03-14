@@ -14,7 +14,7 @@ const show = (galleryImage) => {
     isShowing = true;
     
     newImage.addEventListener('click', (event) => {
-        newImage.remove()
+        newImage.remove();
         isShowing = false;
     })
 
@@ -24,32 +24,31 @@ const show = (galleryImage) => {
 /** Add gallery items with relevant events to the gallery html. */
 export const setupGallery = () => {
     if (!galleryItems) return;
-    const galleryGrid = document.getElementById('gallery-grid')
+    const galleryGrid = document.getElementById('gallery-grid');
     for (let index = 0; index < galleryItems.length; index++) {
         const galleryItem = document.createElement("div");
-        const galleryImage = new Image()
+        const galleryImage = new Image();
         
+        galleryItem.setAttribute('class', 'gallery-item');
+
         galleryImage.src = galleryItems[index].link;
         galleryImage.alt = galleryItems[index].alt.length > 3 ? galleryItems[index].alt : 'ADD PROPER ALT TEXT, NINCOMPOOP';
         galleryItem.appendChild(galleryImage);
         
         galleryImage.onerror = () => {
-            galleryItem.setAttribute('class', 'gallery-item errored-image')
+            galleryImage.setAttribute('class', 'errored-image');
         };
         
         galleryImage.onload = () => {
-            galleryItem.setAttribute('class', 'gallery-item');
             galleryItem.addEventListener('click', (event) => {
-                if(!isShowing){
-                    show(galleryItem.children[0])
-                }
+                if (!isShowing) show(galleryImage);
             })
         }
 
         if(galleryItems[index].subtitle){
             const gallerySubtitle = document.createElement("p");
             
-            gallerySubtitle.innerHTML = galleryItems[index].subtitle
+            gallerySubtitle.innerHTML = galleryItems[index].subtitle;
             galleryItem.appendChild(gallerySubtitle);
         }  
 
