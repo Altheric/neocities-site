@@ -32,6 +32,13 @@ h1{
     font-size: var(--heading-main-size);
 }
 
+.errored-image:hover {
+    cursor: default;
+}
+.errored-image:active {
+    opacity: 100;
+}
+
 /*Footer*/
 footer{
     margin-left: var(--content-left-margin);

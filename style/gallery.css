@@ -21,13 +21,6 @@
     opacity: 0.5;
 }
 
-.errored-image:hover {
-    cursor: default;
-}
-.errored-image:active {
-    opacity: 100;
-}
-
 #focused-image {
     position: absolute;
     background-color: var(--modal-bg-color);

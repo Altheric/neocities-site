@@ -1,3 +1,7 @@
+// Imports
+import { createLinkElement } from "../helpers.js";
+
+
 // Functions
 /**Populate the ul of the Nav with the routes */
 export const populateNav = (queryLocation, routes) => {
@@ -6,10 +10,8 @@ export const populateNav = (queryLocation, routes) => {
 
     Object.keys(routes).forEach(route => {
         const li = document.createElement('li');
-        const a = document.createElement('a');
+        const a = createLinkElement(`index.html?${route}`, routes[route].title)
 
-        a.href = `index.html?${route}`
-        a.innerHTML = routes[route].title;
         if (route == queryLocation) a.setAttribute('id', 'active-page');
         
         li.appendChild(a);

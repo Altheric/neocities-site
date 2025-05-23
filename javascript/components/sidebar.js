@@ -1,3 +1,6 @@
+// Imports
+import { createLinkElement } from "../helpers.js";
+
 // Variables
 const sidebarChildren = document.getElementById('sidebar').children;
 
@@ -19,4 +22,18 @@ export const sidebarToggle = () => {
 
         isClosed = true;
     }
+}
+
+/**Populate the ul of the Sidebar with the neat site routes */
+export const populateSidebar = (neatSiteRoutes) => {
+    const sidebarList = document.getElementById('sidebar-list')
+    
+    neatSiteRoutes.forEach(route => {
+        const li = document.createElement('li');
+        const a = createLinkElement(route.href, route.innerHTML)
+
+        
+        li.appendChild(a);
+        sidebarList.appendChild(li);
+    });
 }
