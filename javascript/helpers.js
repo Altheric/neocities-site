@@ -25,3 +25,18 @@ export const createLinkElement = (href, innerHTML, altText) => {
     
     return newLink
 }
+
+/** Attach links to a list element with the given routes attached */
+export const attachRoutes = (listElement, routes, currentLocation) => {
+    Object.keys(routes).forEach(route => {
+        const li = document.createElement('li');
+        const a = createLinkElement(routes[routes].href, routes[route].innerHTML)
+
+        if (currentLocation && route == currentLocation) a.setAttribute('class', 'current-link');
+        
+        li.appendChild(a);
+        listElement.appendChild(li);
+    });
+
+    return listElement
+}
