@@ -2,52 +2,52 @@
 import { galleryItems } from "../data/galleryItems.js";
 import { createImageElement } from "../helpers.js";
 
-// Variables
-let isShowing = false;
-
 // Functions
-/** Show a focused version of the image. */
-const show = (galleryImage) => {
-    const newImage = document.createElement('div');
-    newImage.append(galleryImage.cloneNode());
-    newImage.setAttribute('id', 'focused-image');
-    
-    isShowing = true;
-    
-    newImage.addEventListener('click', (event) => {
-        newImage.remove();
-        isShowing = false;
-    })
+/** Show a modal with a full size version of the image. */
+const show = (galleryData) => {
+    const galleryDialogue = document.getElementById('focused-image');
 
-    document.body.append(newImage);
+    galleryDialogue.children[0].src = galleryData.link;
+    galleryDialogue.children[0].alt = galleryData.alt.length > 3 ? 
+        galleryData.alt : 'ADD PROPER ALT TEXT, NINCOMPOOP';;
+
+    galleryDialogue.children[1].innerHTML = galleryData.subtitle ?? '';
+    galleryDialogue.showModal();
 };
 
 /** Add gallery items with relevant events to the gallery html. */
 export const setupGallery = () => {
     if (!galleryItems) return;
+    
     const galleryGrid = document.getElementById('gallery-grid');
-    for (let index = 0; index < galleryItems.length; index++) {
-        const galleryItem = createGalleryItem(galleryItems[index])
 
-        galleryGrid.appendChild(galleryItem);
+    for (let index = 0; index < galleryItems.length; index++) { 
+        galleryGrid.appendChild(createGalleryItem(galleryItems[index]));
     }
+
+    const galleryDialogue = document.getElementById('focused-image');
+
+    galleryDialogue.addEventListener('click', (event) => {
+        galleryDialogue.close();
+    })
 }
 
 /** Create a new galleryItem to add to the gallery. */
 const createGalleryItem = (galleryData) => {
     const galleryItem = document.createElement("div");
-    const galleryImage = createImageElement(galleryData.link, galleryData.alt);
-    
+
     galleryItem.setAttribute('class', 'gallery-item');
-    
-    galleryItem.appendChild(galleryImage);
+
+    const galleryImage = createImageElement(galleryData.link, galleryData.alt);
     
     galleryImage.onload = () => {
         galleryItem.addEventListener('click', (event) => {
-            if (!isShowing) show(galleryImage);
+            show(galleryData);
         })
     }
 
+    galleryItem.appendChild(galleryImage);
+    
     if(galleryData.subtitle){
         const gallerySubtitle = document.createElement("p");
         

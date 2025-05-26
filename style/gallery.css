@@ -22,17 +22,16 @@
 }
 
 #focused-image {
-    position: absolute;
-    background-color: var(--modal-bg-color);
-    bottom: 0;
-    left: 0;
-    z-index: 100;
     width: 100vw;
     height: 100vh;
-    & > img {
-        position: relative;
-        top: 10%;
+    border: none;
+    background-color: var(--modal-bg-color);
+    color: white;
+    text-align: center;
+    & > * {
+        position:relative;
+        top: 10vh;
         display: block;
-        margin: auto
+        margin: auto;
     }
 }

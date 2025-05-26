@@ -21,7 +21,7 @@ const setupPage = (queryLocation) => {
 }
 
 /** Get the contents of the queried location. */
-const getPage = async (queryLocation = '#home', location) => {
+const getPage = async (queryLocation, location) => {
     const content = document.getElementById('page-content');
 
     try {

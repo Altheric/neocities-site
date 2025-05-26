@@ -39,6 +39,11 @@ h1{
     opacity: 100;
 }
 
+dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
 /*Footer*/
 footer{
     margin-left: var(--content-left-margin);
