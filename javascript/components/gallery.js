@@ -2,16 +2,22 @@
 import { galleryItems } from "../data/galleryItems.js";
 import { createImageElement } from "../helpers.js";
 
+// Types
+/** @typedef {{link: string, alt: string, subtitle: string}} */
+var galleryItem;
+
 // Functions
-/** Show a modal with a full size version of the image. */
-const show = (galleryData) => {
+/** Show a modal with a full size version of the image. 
+ * @param {HTMLImageElement} image // Image for the dialogue
+ * @param {string} subtitle // Subtitle for the image
+ */
+const show = (image, subtitle) => {
     const galleryDialogue = document.getElementById('focused-image');
 
-    galleryDialogue.children[0].src = galleryData.link;
-    galleryDialogue.children[0].alt = galleryData.alt.length > 3 ? 
-        galleryData.alt : 'ADD PROPER ALT TEXT, NINCOMPOOP';;
+    galleryDialogue.children[0].src = image.src;
+    galleryDialogue.children[0].alt = image.alt;
 
-    galleryDialogue.children[1].innerHTML = galleryData.subtitle ?? '';
+    galleryDialogue.children[1].innerHTML = subtitle ?? '';
     galleryDialogue.showModal();
 };
 
@@ -21,9 +27,9 @@ export const setupGallery = () => {
     
     const galleryGrid = document.getElementById('gallery-grid');
 
-    for (let index = 0; index < galleryItems.length; index++) { 
-        galleryGrid.appendChild(createGalleryItem(galleryItems[index]));
-    }
+    galleryItems.forEach(galleryItem => {
+        galleryGrid.appendChild(createGalleryItem(galleryItem));
+    });
 
     const galleryDialogue = document.getElementById('focused-image');
 
@@ -32,7 +38,13 @@ export const setupGallery = () => {
     })
 }
 
-/** Create a new galleryItem to add to the gallery. */
+
+
+
+/** Create a new galleryItem to add to the gallery.
+ * @param {galleryItem} galleryData // Gallery item data
+ * @return {galleryItem} // Fully rendered galleryData
+ */
 const createGalleryItem = (galleryData) => {
     const galleryItem = document.createElement("div");
 
@@ -42,7 +54,7 @@ const createGalleryItem = (galleryData) => {
     
     galleryImage.onload = () => {
         galleryItem.addEventListener('click', (event) => {
-            show(galleryData);
+            show(galleryImage, galleryData.subtitle);
         })
     }
 
@@ -55,5 +67,5 @@ const createGalleryItem = (galleryData) => {
         galleryItem.appendChild(gallerySubtitle);
     }  
 
-    return galleryItem
+    return galleryItem;
 }

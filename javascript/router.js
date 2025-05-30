@@ -2,7 +2,10 @@
 import { setupGallery } from './components/gallery.js';
 
 // Functions
-/** Display the current page of the querylocation. */
+/** Display the current page of the querylocation.
+ * @param {string} queryLocation // Location of the index query
+ * @param {arr}
+ */
 export const router = (queryLocation = '#home', routes) => {
     const location = routes[queryLocation];
 
