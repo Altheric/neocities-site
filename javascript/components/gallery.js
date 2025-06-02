@@ -3,8 +3,8 @@ import { galleryItems } from "../data/galleryItems.js";
 import { createImageElement } from "../helpers.js";
 
 // Types
-/** @typedef {{link: string, alt: string, subtitle: string}} */
-var galleryItem;
+import "../types.js"
+/** @type {GalleryData} */
 
 // Functions
 /** Show a modal with a full size version of the image. 
@@ -42,14 +42,13 @@ export const setupGallery = () => {
 
 
 /** Create a new galleryItem to add to the gallery.
- * @param {galleryItem} galleryData // Gallery item data
- * @return {galleryItem} // Fully rendered galleryData
+ * @param {GalleryData} galleryData // Gallery item data
+ * @return {HTMLDivElement} // Fully rendered galleryData
  */
 const createGalleryItem = (galleryData) => {
     const galleryItem = document.createElement("div");
 
     galleryItem.setAttribute('class', 'gallery-item');
-
     const galleryImage = createImageElement(galleryData.link, galleryData.alt);
     
     galleryImage.onload = () => {

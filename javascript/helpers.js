@@ -2,7 +2,8 @@
 /** Create a new HTML image element with a src and alt text together with an error mark 
  * @param {string} srcUrl Image source url
  * @param {string} altText Image alt text
- * @param {string} classes Image classes
+ * @param {string} [classes] Image classes
+ * @return {HTMLImageElement}
  */
 export const createImageElement = (srcUrl, altText, classes) => {
     const newImage = new Image();
@@ -22,7 +23,8 @@ export const createImageElement = (srcUrl, altText, classes) => {
 /** Create a new HTML link element from href and innerHTML
  * @param {string} href Link url
  * @param {string} innerHTML Link text
- * @param {string} classes Link classes
+ * @param {string} [classes] Link classes
+ * @return {HTMLAnchorElement}
  */
 export const createLinkElement = (href, innerHTML, classes = '') => {
     const newLink = document.createElement('a');

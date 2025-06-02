@@ -1,10 +1,15 @@
 // Imports
 import { setupGallery } from './components/gallery.js';
 
+// Types
+import "../types.js"
+/** @type {Routes}*/
+/** @type {Route} */
+
 // Functions
 /** Display the current page of the querylocation.
- * @param {string} queryLocation // Location of the index query
- * @param {arr}
+ * @param {string} queryLocation Location of the index query
+ * @param {Routes} routes
  */
 export const router = (queryLocation = '#home', routes) => {
     const location = routes[queryLocation];
@@ -14,7 +19,9 @@ export const router = (queryLocation = '#home', routes) => {
     
 }
 
-/** Call the javascript setup for the routed page. */
+/** Call the javascript setup for the routed page. 
+ * @param {string} queryLocation Location of the index query 
+ */
 const setupPage = (queryLocation) => {
     switch (queryLocation) {
         case 'gallery':
@@ -23,7 +30,10 @@ const setupPage = (queryLocation) => {
     }
 }
 
-/** Get the contents of the queried location. */
+/** Get the contents of the queried location.
+ * @param {string} queryLocation Location of the index query 
+ * @param {Route} location Route location
+ */
 const getPage = async (queryLocation, location) => {
     const content = document.getElementById('page-content');
 

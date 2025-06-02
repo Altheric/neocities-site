@@ -1,4 +1,4 @@
-export const routes = {
+export const Routes = {
     home: {
         title: 'Home',
         file: 'home.html'
