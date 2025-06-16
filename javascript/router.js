@@ -2,7 +2,7 @@
 import { setupGallery } from './components/gallery.js';
 
 // Types
-import "../types.js"
+import "./types.js"
 /** @type {Routes}*/
 /** @type {Route} */
 
