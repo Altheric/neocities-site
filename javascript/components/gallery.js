@@ -21,24 +21,67 @@ const show = (image, subtitle) => {
     galleryDialogue.showModal();
 };
 
-/** Add gallery items with relevant events to the gallery html. */
-export const setupGallery = () => {
+/** Add gallery filter options depending on the groups in galleryItems.js */
+export const setupGalleryMenu = () => {
     if (!galleryItems) return;
     
-    const galleryGrid = document.getElementById('gallery-grid');
+    const galleryMenu = document.getElementById('gallery-sub-menu');
 
     galleryItems.forEach(galleryItem => {
-        galleryGrid.appendChild(createGalleryItem(galleryItem));
+        const menuItem = document.createElement("div");
+        menuItem.innerHTML = galleryItem.group
+        menuItem.addEventListener('click', (event) => {
+            toggleGroupVisibility(galleryItem.group);
+        })
+        galleryMenu.appendChild(menuItem);
     });
 
+}
+
+/** Create items for all gallery items and then show the right one. */
+export const populateGalleryItems  = (filter) => {
+    const galleryGrid = document.getElementById('gallery-grid');
+
+    galleryItems.forEach(targetItems => {
+        const gridGroup = document.createElement('div')
+        gridGroup.id = `gallery-grid-${targetItems.group}`
+        targetItems.data.forEach(item => {
+            gridGroup.appendChild(createGalleryItem(item));
+        });   
+        galleryGrid.appendChild(gridGroup);
+    });
+    toggleGroupVisibility (filter)
+}
+
+/** Setup the gallery page */
+export const setupGallery = () => {
+    if (!galleryItems) return;
     const galleryDialogue = document.getElementById('focused-image');
 
     galleryDialogue.addEventListener('click', (event) => {
         galleryDialogue.close();
     })
+    
+    setupGalleryMenu();
+    
+    const firstGroupPick = galleryItems[0].group;
+    populateGalleryItems(firstGroupPick);
 }
 
+export const toggleGroupVisibility = (filter) => {
+    console.log(filter)
+    const galleryGrid = document.getElementById('gallery-grid');
 
+    for (let index = 0; index < galleryGrid.children.length; index++) {
+        const child = galleryGrid.children[index];
+        
+        if (child.id.slice(13) === filter) {
+            child.style.visibility = 'visible'
+        } else {
+            child.style.visibility = 'hidden'
+        }
+    }
+}
 
 
 /** Create a new galleryItem to add to the gallery.

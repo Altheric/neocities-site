@@ -9,8 +9,8 @@
     --modal-bg-color: rgba(0, 0, 0, 0.7);
 
     /*BORDER*/
-    --content-border-color: #e77000;
-    --content-border-gradient-color: #ec994b;
+    --content-border-color: #0096e7;
+    --content-border-gradient-color: #2f74fd;
 
     --content-border-gradient: linear-gradient(0deg, var(--content-border-color) 60%, var(--content-border-gradient-color) 100%);
     
@@ -19,10 +19,10 @@
     /*TEXT*/
     --body-text-color: black;
     --content-text-color: white;
-    --content-link-color: #ff8e59;
-    --content-link-color-secondary: #da5212;
+    --content-link-color: #598bff;
+    --content-link-color-secondary: #1258da;
     --content-link-visited-color: #8e59ff;
-    --nav-link-active-color: #8f3900;
+    --nav-link-active-color: #00398f;
 
     --nav-text-size: 32px;
     --heading-main-size: 84px;
