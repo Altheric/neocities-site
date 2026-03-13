@@ -28,11 +28,22 @@ export const setupGalleryMenu = () => {
     const galleryMenu = document.getElementById('gallery-sub-menu');
     galleryItems.forEach(galleryCategory => {
         
-    
-        const menuCategory = document.createElement("button");
+        // Hoverable category item
+        const menuCategory = document.createElement("div");
+        menuCategory.id = `gallery-grid-menu-${galleryCategory.category}`;
         menuCategory.innerHTML = galleryCategory.category
+        menuCategory.addEventListener('mouseover', (event) => {
+            gallerySubMenuHover(galleryCategory.category, true);
+        })
+        menuCategory.addEventListener('mouseout', (event) => {
+            gallerySubMenuHover(galleryCategory.category, false);
+        })
 
+        // Modal to select groups
+        const groupBlock = document.createElement("div");
+        
         galleryCategory.items.forEach(galleryItem => {
+            // Groups to select gallery content
             const menuItem = document.createElement("button");
             menuItem.innerHTML = galleryItem.group
             
@@ -40,9 +51,11 @@ export const setupGalleryMenu = () => {
                 toggleGroupVisibility(`${galleryCategory.category}-${galleryItem.group}`);
             })
             
-            menuCategory.appendChild(menuItem);
+            groupBlock.appendChild(menuItem);
         })
-        
+
+        groupBlock.style.display = 'none';
+        menuCategory.appendChild(groupBlock);
         galleryMenu.appendChild(menuCategory);
     });
 
@@ -80,7 +93,7 @@ export const setupGallery = () => {
     setupGalleryMenu();
     
     const firstGroupPick = `${galleryItems[0].category}-${galleryItems[0].items[0].group}`;
-    
+
     populateGalleryItems(firstGroupPick);
 }
 
@@ -129,4 +142,25 @@ const createGalleryItem = (galleryData) => {
     }  
 
     return galleryItem;
+}
+
+/**
+ *  Toggle group display upon hovering over a sub menu entry.
+ *  @param {bool} category // Category div to show/hide
+ *  @param {bool} showGroup // Boolean to show or hide the group menu.
+ */
+const gallerySubMenuHover = (category, showGroup) => {
+    const menu = document.getElementById('gallery-sub-menu')
+    
+        for (let index = 0; index < menu.children.length; index++) {
+        const child = menu.children[index];
+        
+        console.log(child)
+        if (child.id.slice(18) === category && showGroup) {
+            console.log(child.children[0])
+            child.children[0].style.display = 'block';
+        } else {
+            child.children[0].style.display = 'none';
+        }
+    }
 }
