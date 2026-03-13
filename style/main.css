@@ -44,6 +44,12 @@ dialog {
     max-height: 100vh;
 }
 
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 /*Footer*/
 footer{
     margin-left: var(--content-left-margin);

@@ -1,5 +1,16 @@
-#gallery-grid {
-    display: grid;
+#gallery-sub-menu {
+    display: flex;
+    background: var(--content-border-gradient);
+    height: 40px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+#gallery-sub-menu > div{
+    color: white;
+    font-size: var(--nav-text-size);
+}
+
+.gallery-group {
     grid-template-columns: repeat(auto-fit, 320px);
 }
 

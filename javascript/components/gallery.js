@@ -26,31 +26,46 @@ export const setupGalleryMenu = () => {
     if (!galleryItems) return;
     
     const galleryMenu = document.getElementById('gallery-sub-menu');
+    galleryItems.forEach(galleryCategory => {
+        
+    
+        const menuCategory = document.createElement("button");
+        menuCategory.innerHTML = galleryCategory.category
 
-    galleryItems.forEach(galleryItem => {
-        const menuItem = document.createElement("div");
-        menuItem.innerHTML = galleryItem.group
-        menuItem.addEventListener('click', (event) => {
-            toggleGroupVisibility(galleryItem.group);
+        galleryCategory.items.forEach(galleryItem => {
+            const menuItem = document.createElement("button");
+            menuItem.innerHTML = galleryItem.group
+            
+            menuItem.addEventListener('click', (event) => {
+                toggleGroupVisibility(`${galleryCategory.category}-${galleryItem.group}`);
+            })
+            
+            menuCategory.appendChild(menuItem);
         })
-        galleryMenu.appendChild(menuItem);
+        
+        galleryMenu.appendChild(menuCategory);
     });
 
 }
 
-/** Create items for all gallery items and then show the right one. */
+/**
+ *  Create items for all gallery items and then show the right one. 
+ *  @param {string} filter // Filter for the group of gallery items to display.
+ */
 export const populateGalleryItems  = (filter) => {
     const galleryGrid = document.getElementById('gallery-grid');
 
-    galleryItems.forEach(targetItems => {
-        const gridGroup = document.createElement('div')
-        gridGroup.id = `gallery-grid-${targetItems.group}`
-        targetItems.data.forEach(item => {
+    galleryItems.forEach(galleryCategory => galleryCategory.items.forEach((galleryItem => {
+        const gridGroup = document.createElement('div');
+        
+        gridGroup.id = `gallery-grid-${galleryCategory.category}-${galleryItem.group}`
+        gridGroup.setAttribute('class', 'gallery-group');
+        galleryItem.data.forEach(item => {
             gridGroup.appendChild(createGalleryItem(item));
         });   
-        galleryGrid.appendChild(gridGroup);
-    });
-    toggleGroupVisibility (filter)
+        galleryGrid.appendChild(gridGroup)
+    })));
+    toggleGroupVisibility (filter);
 }
 
 /** Setup the gallery page */
@@ -64,21 +79,25 @@ export const setupGallery = () => {
     
     setupGalleryMenu();
     
-    const firstGroupPick = galleryItems[0].group;
+    const firstGroupPick = `${galleryItems[0].category}-${galleryItems[0].items[0].group}`;
+    
     populateGalleryItems(firstGroupPick);
 }
 
+/**
+ *  Toggle group display using the handler
+ *  @param {string} filter // Filter for the group of gallery items to display.
+ */
 export const toggleGroupVisibility = (filter) => {
-    console.log(filter)
     const galleryGrid = document.getElementById('gallery-grid');
 
     for (let index = 0; index < galleryGrid.children.length; index++) {
         const child = galleryGrid.children[index];
         
         if (child.id.slice(13) === filter) {
-            child.style.visibility = 'visible'
+            child.style.display = 'grid';
         } else {
-            child.style.visibility = 'hidden'
+            child.style.display = 'none';
         }
     }
 }
