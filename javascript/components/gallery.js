@@ -49,7 +49,7 @@ export const setupGalleryMenu = () => {
             menuButton.innerHTML = galleryItem.group
             
             menuButton.addEventListener('click', (event) => {
-                toggleGroupVisibility(`${galleryCategory.category}-${galleryItem.group}`);
+                toggleGroupVisibility(`${galleryCategory.category}-${galleryItem.group}`, galleryItem.header);
             })
             
             menuItem.appendChild(menuButton);
@@ -67,7 +67,7 @@ export const setupGalleryMenu = () => {
  *  Create items for all gallery items and then show the right one. 
  *  @param {string} filter Filter for the group of gallery items to display.
  */
-export const populateGalleryItems  = (filter) => {
+export const populateGalleryItems  = (filter, header) => {
     const galleryGrid = document.getElementById('gallery-grid');
 
     galleryItems.forEach(galleryCategory => galleryCategory.items.forEach((galleryItem => {
@@ -80,7 +80,7 @@ export const populateGalleryItems  = (filter) => {
         });   
         galleryGrid.appendChild(gridGroup)
     })));
-    toggleGroupVisibility(filter);
+    toggleGroupVisibility(filter, header);
 }
 
 /** Setup the gallery page */
@@ -93,24 +93,32 @@ export const setupGallery = () => {
     })
     
     setupGalleryMenu();
-    
-    const firstGroupPick = `${galleryItems[0].category}-${galleryItems[0].items[0].group}`;
+    const firstGroupItem = galleryItems[0].items[0]
+    const firstGroupPick = `${galleryItems[0].category}-${firstGroupItem.group}`;
 
-    populateGalleryItems(firstGroupPick);
+    populateGalleryItems(firstGroupPick, firstGroupItem.header);
 }
 
 /**
  *  Toggle group display using the handler
  *  @param {string} filter Filter for the group of gallery items to display.
  */
-export const toggleGroupVisibility = (filter) => {
+export const toggleGroupVisibility = (filter, header) => {
     const galleryGrid = document.getElementById('gallery-grid');
+    const galleryHeader = document.getElementById('gallery-header');
 
     for (let index = 0; index < galleryGrid.children.length; index++) {
         const child = galleryGrid.children[index];
         
         if (child.id.slice(13) === filter) {
             child.style.display = 'grid';
+            if (header) {
+                galleryHeader.style.display = 'block'
+                galleryHeader.innerHTML = header
+            } else {
+                galleryHeader.style.display = 'none'
+            }
+            
         } else {
             child.style.display = 'none';
         }
