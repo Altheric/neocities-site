@@ -60,7 +60,7 @@ export const galleryItems = [
                     {
                         link: 'https://as1.ftcdn.net/v2/jpg/02/50/64/48/1000_F_250644876_yS6EHzJXZ2qjmQmNQ23xwlgRRVq9t1Hh.jpg',
                         alt: 'funnydog',
-                        subtitle: 'Another funny dog'
+                        subtitle: 'Yet another funny dog'
                     },
                 ]
             }

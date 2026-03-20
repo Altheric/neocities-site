@@ -1,21 +1,30 @@
-#gallery-sub-menu {
-    display: flex;
+#gallery-sub-menu-bg {
+    position: relative;
+    height: 40px;
     background: var(--content-border-gradient);
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+#gallery-sub-menu {
+    display: flex;
+    position: relative;
+    bottom: 35px;
 }
 
 #gallery-sub-menu > div {
     color: white;
     font-size: var(--nav-text-size);
     cursor: default;
+    min-width: 100px;
+    text-align: center;
 }
-#gallery-sub-menu > div > div {
-    display: block;
-    background: cyan;
-    position: relative;
-    width: 200px;
 
+#gallery-sub-menu > div > ul {
+    background: cyan;
+    width: 100px;
+    position: absolute;
 }
+
 .gallery-group {
     grid-template-columns: repeat(auto-fit, 320px);
 }

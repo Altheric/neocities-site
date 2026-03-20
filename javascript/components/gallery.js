@@ -9,7 +9,7 @@ import "../types.js"
 // Functions
 /** Show a modal with a full size version of the image. 
  * @param {HTMLImageElement} image // Image for the dialogue
- * @param {string} subtitle // Subtitle for the image
+ * @param {string} subtitle Subtitle for the image
  */
 const show = (image, subtitle) => {
     const galleryDialogue = document.getElementById('focused-image');
@@ -40,17 +40,19 @@ export const setupGalleryMenu = () => {
         })
 
         // Modal to select groups
-        const groupBlock = document.createElement("div");
+        const groupBlock = document.createElement("ul");
         
         galleryCategory.items.forEach(galleryItem => {
             // Groups to select gallery content
-            const menuItem = document.createElement("button");
-            menuItem.innerHTML = galleryItem.group
+            const menuItem = document.createElement("li");
+            const menuButton = document.createElement("button");
+            menuButton.innerHTML = galleryItem.group
             
-            menuItem.addEventListener('click', (event) => {
+            menuButton.addEventListener('click', (event) => {
                 toggleGroupVisibility(`${galleryCategory.category}-${galleryItem.group}`);
             })
             
+            menuItem.appendChild(menuButton);
             groupBlock.appendChild(menuItem);
         })
 
@@ -63,7 +65,7 @@ export const setupGalleryMenu = () => {
 
 /**
  *  Create items for all gallery items and then show the right one. 
- *  @param {string} filter // Filter for the group of gallery items to display.
+ *  @param {string} filter Filter for the group of gallery items to display.
  */
 export const populateGalleryItems  = (filter) => {
     const galleryGrid = document.getElementById('gallery-grid');
@@ -78,7 +80,7 @@ export const populateGalleryItems  = (filter) => {
         });   
         galleryGrid.appendChild(gridGroup)
     })));
-    toggleGroupVisibility (filter);
+    toggleGroupVisibility(filter);
 }
 
 /** Setup the gallery page */
@@ -99,7 +101,7 @@ export const setupGallery = () => {
 
 /**
  *  Toggle group display using the handler
- *  @param {string} filter // Filter for the group of gallery items to display.
+ *  @param {string} filter Filter for the group of gallery items to display.
  */
 export const toggleGroupVisibility = (filter) => {
     const galleryGrid = document.getElementById('gallery-grid');
@@ -146,18 +148,16 @@ const createGalleryItem = (galleryData) => {
 
 /**
  *  Toggle group display upon hovering over a sub menu entry.
- *  @param {bool} category // Category div to show/hide
- *  @param {bool} showGroup // Boolean to show or hide the group menu.
+ *  @param {bool} category Category div to show/hide
+ *  @param {bool} showGroup Boolean to show or hide the group menu.
  */
 const gallerySubMenuHover = (category, showGroup) => {
     const menu = document.getElementById('gallery-sub-menu')
     
-        for (let index = 0; index < menu.children.length; index++) {
+    for (let index = 0; index < menu.children.length; index++) {
         const child = menu.children[index];
-        
-        console.log(child)
+    
         if (child.id.slice(18) === category && showGroup) {
-            console.log(child.children[0])
             child.children[0].style.display = 'block';
         } else {
             child.children[0].style.display = 'none';
