@@ -8,7 +8,7 @@
 #gallery-sub-menu {
     display: flex;
     position: relative;
-    bottom: 35px;
+    bottom: 40px;
 }
 
 #gallery-sub-menu > div {
@@ -17,12 +17,34 @@
     cursor: default;
     min-width: 100px;
     text-align: center;
+    padding-top: 8px;
+}
+
+#gallery-sub-menu > div:hover {
+    color: grey;
+    background-color: rgba(0, 0, 0,0.3)
 }
 
 #gallery-sub-menu > div > ul {
-    background: cyan;
-    width: 100px;
     position: absolute;
+    padding-bottom: 5px;
+    background-color: var(--body-bg-color);
+    clip-path: polygon(100% 0, 100% 94%, 98% 100%, 2% 100%, 0 95%, 0 0);
+    & li > button {
+        font-size: var(--heading-tertiary-size);
+        width: 100px;
+        height: 40px;
+        color: white;
+        border-bottom: 2px solid #1a397b;
+    };
+    & li > button:hover {
+        color: grey;
+        background-color: rgba(0, 0, 0,0.3)
+    };
+        & li > button:active {
+        color: black;
+        background-color: rgba(0, 0, 0,0.3)
+    };
 }
 
 .gallery-group {
