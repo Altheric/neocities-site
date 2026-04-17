@@ -26,36 +26,33 @@ export const setupGalleryMenu = () => {
     if (!galleryItems) return;
     
     const galleryMenu = document.getElementById('gallery-sub-menu');
-    galleryItems.forEach(galleryCategory => {
-        
+    Object.entries(galleryItems).forEach(([galleryCategory, galleryGroups]) => {
         // Hoverable category item
         const menuCategory = document.createElement("div");
-        menuCategory.id = `gallery-grid-menu-${galleryCategory.category}`;
-        menuCategory.innerHTML = galleryCategory.category
+        menuCategory.id = `gallery-grid-menu-${galleryCategory}`;
+        menuCategory.innerHTML = galleryCategory
         menuCategory.addEventListener('mouseover', (event) => {
-            gallerySubMenuHover(galleryCategory.category, true);
+            gallerySubMenuHover(galleryCategory, true);
         })
         menuCategory.addEventListener('mouseout', (event) => {
-            gallerySubMenuHover(galleryCategory.category, false);
+            gallerySubMenuHover(galleryCategory, false);
         })
 
         // Modal to select groups
         const groupBlock = document.createElement("ul");
         
-        galleryCategory.items.forEach(galleryItem => {
+        galleryGroups.forEach(galleryItem => {
             // Groups to select gallery content
             const menuItem = document.createElement("li");
             const menuButton = document.createElement("button");
             menuButton.innerHTML = galleryItem.group
             
             menuButton.addEventListener('click', (event) => {
-                toggleGroupVisibility(`${galleryCategory.category}-${galleryItem.group}`, galleryItem.header);
+                toggleGroupVisibility(`${galleryCategory}-${galleryItem.group}`, galleryItem.header);
             })
-            
             menuItem.appendChild(menuButton);
             groupBlock.appendChild(menuItem);
         })
-
         groupBlock.style.display = 'none';
         menuCategory.appendChild(groupBlock);
         galleryMenu.appendChild(menuCategory);
@@ -70,10 +67,11 @@ export const setupGalleryMenu = () => {
 export const populateGalleryItems  = (filter, header) => {
     const galleryGrid = document.getElementById('gallery-grid');
 
-    galleryItems.forEach(galleryCategory => galleryCategory.items.forEach((galleryItem => {
+    const galleryCategories = Object.entries(galleryItems)
+    galleryCategories.forEach(galleryCategory => galleryCategory[1].forEach((galleryItem => {
         const gridGroup = document.createElement('div');
         
-        gridGroup.id = `gallery-grid-${galleryCategory.category}-${galleryItem.group}`
+        gridGroup.id = `gallery-grid-${galleryCategory[0]}-${galleryItem.group}`
         gridGroup.setAttribute('class', 'gallery-group');
         galleryItem.data.forEach(item => {
             gridGroup.appendChild(createGalleryItem(item));
@@ -86,6 +84,7 @@ export const populateGalleryItems  = (filter, header) => {
 /** Setup the gallery page */
 export const setupGallery = () => {
     if (!galleryItems) return;
+
     const galleryDialogue = document.getElementById('focused-image');
 
     galleryDialogue.addEventListener('click', (event) => {
@@ -93,10 +92,12 @@ export const setupGallery = () => {
     })
     
     setupGalleryMenu();
-    const firstGroupItem = galleryItems[0].items[0]
-    const firstGroupPick = `${galleryItems[0].category}-${firstGroupItem.group}`;
-
+    const firstGroupEntry = Object.entries(galleryItems)
+    const firstGroupItem = firstGroupEntry[0][1][0]
+    const firstGroupPick = `${firstGroupEntry[0][0]}-${firstGroupItem.group}`;
+    
     populateGalleryItems(firstGroupPick, firstGroupItem.header);
+    
 }
 
 /**
